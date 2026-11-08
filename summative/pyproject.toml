@@ -1,0 +1,19 @@
+[project]
+name = "entropy"
+version = "0.1.0"
+description = "ENTROPY: predicting the all-in cost of sending money to Africa (World Bank Remittance Prices Worldwide)"
+requires-python = ">=3.12"
+dependencies = [
+    "joblib>=1.6.0",
+    "numpy>=2.5.4",
+    "pandas>=3.1.1",
+    "scikit-learn>=1.9.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "matplotlib>=3.11.2",
+    "nbconvert>=7.17.2",
+    "openpyxl>=3.1.5",
+]

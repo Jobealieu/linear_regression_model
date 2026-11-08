@@ -1,0 +1,15 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Raw downloads (rebuilt by the notebook)
+*.xlsx
+
+# Editor / OS / local tooling
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

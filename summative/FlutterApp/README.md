@@ -1,17 +1,32 @@
-# entropy
+# ENTROPY mobile app
 
-ENTROPY: predicts the all-in cost of sending money into Africa.
+One-page Flutter app that sends a remittance service profile to the ENTROPY API
+(`POST https://entropy-remit-api.onrender.com/predict`) and shows the predicted all-in cost.
 
-## Getting Started
+## Run it
 
-This project is a starting point for a Flutter application.
+Requires the Flutter SDK (3.32 or newer) and an Android emulator or phone.
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+cd summative/FlutterApp
+flutter pub get
+flutter emulators --launch <emulator id>   # list ids with: flutter emulators
+flutter run
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Press **fill sample** to load a valid quote (USA to Gambia, online, mobile wallet), then **Predict**.
+The API runs on Render's free tier, so the first request after a quiet spell can take up to a minute.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Code
+
+| File | What it does |
+|---|---|
+| `lib/api.dart` | Calls the API (`/predict` and `/`) and turns validation errors into readable sentences |
+| `lib/predict_page.dart` | The page: 10 labelled text fields, the Predict button, the model panel |
+| `lib/output_panel.dart` | The display area for the prediction or the error message |
+| `lib/theme.dart` | Colours and font (JetBrains Mono, SIL Open Font License, `assets/fonts/OFL.txt`) |
+
+```bash
+flutter analyze   # strict analyzer settings
+flutter test      # API client and page tests, no network needed
+```

@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The app calls the ENTROPY API on Render. Debug builds get this permission automatically, release builds need it here. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="entropy"
+        android:label="ENTROPY"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

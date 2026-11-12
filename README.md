@@ -7,9 +7,10 @@ root@entropy:~# infer --target total_cost_pct --corridor *>AFRICA
 
 ## Mission and problem
 
-**Mission:** make money movement in Africa transparent, cheap and open to everyone, using decentralised financial rails that bypass the barriers keeping remittances expensive.
-**Problem:** sending USD 200 into Africa costs **7.7% on average**, more than double the UN's 3% target (SDG 10.c), and much of it is hidden in the exchange rate.
-ENTROPY predicts that all-in cost for any corridor and service profile, so fintech builders know the price to beat and regulators know where to look.
+**Mission:** make money movement in Africa transparent and cheap, on open, decentralised financial rails.\
+**Problem:** sending USD 200 into Africa costs **7.7% on average**, more than double the UN's 3% target (SDG 10.c),\
+and much of that cost is hidden in the exchange rate.\
+ENTROPY predicts the all-in cost for any corridor and service: the price fintechs must beat, and where regulators should look.
 
 ## Dataset
 
@@ -32,6 +33,35 @@ The API runs on Render's free tier, so after 15 minutes without traffic the firs
 
 To try retraining, upload [`summative/API/data/new_quarter_2025Q3.csv`](summative/API/data/new_quarter_2025Q3.csv), the World Bank's newest quarter, which the model never saw.
 
+## Video demo
+
+**YouTube:** link added after recording.
+
+## Run the mobile app
+
+The app runs on an Android emulator or a phone, not as a web app. It calls the live API above.
+
+1. Install the [Flutter SDK](https://docs.flutter.dev/get-started/install) (3.32 or newer) and Android Studio. In Android Studio, open **Device Manager** and create a virtual device. Run `flutter doctor` to check the setup.
+2. Get the code and the app's packages:
+   ```bash
+   git clone https://github.com/Jobealieu/linear_regression_model.git
+   cd linear_regression_model/summative/FlutterApp
+   flutter pub get
+   ```
+3. Start the emulator. `flutter emulators` lists the ids; launch one with:
+   ```bash
+   flutter emulators --launch <emulator id>
+   ```
+   Or connect an Android phone with USB debugging turned on.
+4. When the emulator's home screen is up, run the app:
+   ```bash
+   flutter run
+   ```
+5. In the app, fill in the 10 fields, or tap **fill sample** for a valid quote (USA to Gambia, online, mobile wallet). Tap **Predict**. The predicted cost appears in the output panel under the button.
+6. To see the error message, clear a field or set **Delivery time (hours)** to `500`, then tap **Predict** again.
+
+The API runs on Render's free tier, so the first prediction after a quiet spell can take up to a minute.
+
 ## Repository layout
 
 ```
@@ -40,10 +70,13 @@ linear_regression_model/
 └── summative/
     ├── pyproject.toml, uv.lock        # uv-managed environment
     ├── linear_regression/
-    │   ├── multivariate.ipynb         # data, EDA, models
+    │   ├── multivariate.ipynb         # data, EDA, four models, best model saved
     │   └── data/                      # Africa slice of the World Bank dataset
-    ├── API/                           # FastAPI service
-    └── FlutterApp/                    # mobile app
+    ├── API/
+    │   ├── prediction.py              # FastAPI service: /predict, /retrain, /docs
+    │   ├── requirements.txt           # exported from uv for Render
+    │   └── best_model.pkl             # RandomForest pipeline with its preprocessing
+    └── FlutterApp/                    # one-page mobile app (lib/api.dart calls the API)
 ```
 
 ## Run the notebook

@@ -33,6 +33,35 @@ The API runs on Render's free tier, so after 15 minutes without traffic the firs
 
 To try retraining, upload [`summative/API/data/new_quarter_2025Q3.csv`](summative/API/data/new_quarter_2025Q3.csv), the World Bank's newest quarter, which the model never saw.
 
+## Video demo
+
+**YouTube:** link added after recording.
+
+## Run the mobile app
+
+The app runs on an Android emulator or a phone, not as a web app. It calls the live API above.
+
+1. Install the [Flutter SDK](https://docs.flutter.dev/get-started/install) (3.32 or newer) and Android Studio. In Android Studio, open **Device Manager** and create a virtual device. Run `flutter doctor` to check the setup.
+2. Get the code and the app's packages:
+   ```bash
+   git clone https://github.com/Jobealieu/linear_regression_model.git
+   cd linear_regression_model/summative/FlutterApp
+   flutter pub get
+   ```
+3. Start the emulator. `flutter emulators` lists the ids; launch one with:
+   ```bash
+   flutter emulators --launch <emulator id>
+   ```
+   Or connect an Android phone with USB debugging turned on.
+4. When the emulator's home screen is up, run the app:
+   ```bash
+   flutter run
+   ```
+5. In the app, fill in the 10 fields, or tap **fill sample** for a valid quote (USA to Gambia, online, mobile wallet). Tap **Predict**. The predicted cost appears in the output panel under the button.
+6. To see the error message, clear a field or set **Delivery time (hours)** to `500`, then tap **Predict** again.
+
+The API runs on Render's free tier, so the first prediction after a quiet spell can take up to a minute.
+
 ## Repository layout
 
 ```

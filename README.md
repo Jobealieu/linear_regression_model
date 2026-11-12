@@ -7,9 +7,10 @@ root@entropy:~# infer --target total_cost_pct --corridor *>AFRICA
 
 ## Mission and problem
 
-**Mission:** make money movement in Africa transparent, cheap and open to everyone, using decentralised financial rails that bypass the barriers keeping remittances expensive.
-**Problem:** sending USD 200 into Africa costs **7.7% on average**, more than double the UN's 3% target (SDG 10.c), and much of it is hidden in the exchange rate.
-ENTROPY predicts that all-in cost for any corridor and service profile, so fintech builders know the price to beat and regulators know where to look.
+**Mission:** make money movement in Africa transparent and cheap, on open, decentralised financial rails.\
+**Problem:** sending USD 200 into Africa costs **7.7% on average**, more than double the UN's 3% target (SDG 10.c),\
+and much of that cost is hidden in the exchange rate.\
+ENTROPY predicts the all-in cost for any corridor and service: the price fintechs must beat, and where regulators should look.
 
 ## Dataset
 

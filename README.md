@@ -70,10 +70,13 @@ linear_regression_model/
 └── summative/
     ├── pyproject.toml, uv.lock        # uv-managed environment
     ├── linear_regression/
-    │   ├── multivariate.ipynb         # data, EDA, models
+    │   ├── multivariate.ipynb         # data, EDA, four models, best model saved
     │   └── data/                      # Africa slice of the World Bank dataset
-    ├── API/                           # FastAPI service
-    └── FlutterApp/                    # mobile app
+    ├── API/
+    │   ├── prediction.py              # FastAPI service: /predict, /retrain, /docs
+    │   ├── requirements.txt           # exported from uv for Render
+    │   └── best_model.pkl             # RandomForest pipeline with its preprocessing
+    └── FlutterApp/                    # one-page mobile app (lib/api.dart calls the API)
 ```
 
 ## Run the notebook

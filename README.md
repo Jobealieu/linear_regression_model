@@ -35,7 +35,7 @@ To try retraining, upload [`summative/API/data/new_quarter_2025Q3.csv`](summativ
 
 ## Video demo
 
-**YouTube:** link added after recording.
+**YouTube:** https://youtu.be/VLXjqrhW7_U (6:47, with chapters and English captions)
 
 ## Run the mobile app
 

@@ -35,7 +35,9 @@ To try retraining, upload [`summative/API/data/new_quarter_2025Q3.csv`](summativ
 
 ## Video demo
 
-**YouTube:** https://youtu.be/VLXjqrhW7_U (6:47, with chapters and English captions)
+<a href="https://youtu.be/VLXjqrhW7_U"><img src="https://img.youtube.com/vi/VLXjqrhW7_U/maxresdefault.jpg" alt="ENTROPY demo video on YouTube: app, Swagger UI, Flutter code, notebook and the four questions" width="720"></a>
+
+**YouTube:** https://youtu.be/VLXjqrhW7_U (6:47, with chapters and English captions). Click the image to watch.
 
 ## Run the mobile app
 
